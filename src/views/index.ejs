@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Dashboard</title>
+    <style>
+    body { font-family: Arial, sans-serif; }
+    .condition { margin: 10px 0; }
+    .passed { color: green; }
+    .failed { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Checklist Dashboard</h1>
+    <% results.forEach(result => { %>
+    <div class="condition">
+        <span><%= result.name %>:</span>
+        <span class="<%= result.passed ? 'passed' : 'failed' %>">
+        <%= result.passed ? 'Passed' : 'Failed' %>
+        </span>
+    </div>
+    <% }) %>
+</body>
+</html>
